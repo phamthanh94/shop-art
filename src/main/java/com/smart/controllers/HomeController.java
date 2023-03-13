@@ -33,7 +33,7 @@ public class HomeController {
 	private ProductRepository productRepository;
 
 
-	@GetMapping("/home")
+	@GetMapping("/")
 	public String home(Model model) {
 		commonService.initMenuDropList(model);
 		Pageable pageable = PageRequest.of(0, 10);
