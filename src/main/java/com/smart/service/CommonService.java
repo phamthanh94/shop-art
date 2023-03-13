@@ -20,15 +20,17 @@ public class CommonService {
     private final ProductTypeRepository productTypeRepository;
     private final UserRepository userRepository;
     private final ProductRepository productRepository;
+    private final UserService userService;
 
     public CommonService(AuthorRepository authorRepository,
                          ProductTypeRepository productTypeRepository,
                          UserRepository userRepository,
-                         ProductRepository productRepository) {
+                         ProductRepository productRepository, UserService userService) {
         this.authorRepository = authorRepository;
         this.productTypeRepository = productTypeRepository;
         this.userRepository = userRepository;
         this.productRepository = productRepository;
+        this.userService = userService;
     }
 
     public void initMenuDropList(Model model) {
@@ -39,7 +41,7 @@ public class CommonService {
     public void addCommonData(Model model, Principal principal) {
         String userName = principal.getName();
         //get user from db
-        User user = this.userRepository.getUserByUserName(userName);
+        User user = this.userService.getUserByUserName(userName);
         model.addAttribute("user", user);
     }
 

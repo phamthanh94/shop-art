@@ -33,7 +33,7 @@ public class AuthorController {
             return "author_detail";
         } else {
             CommonUtils.alertWarn(session);
-            return "redirect:/home";
+            return "redirect:/";
         }
     }
 }

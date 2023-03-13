@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 		.and().formLogin()//allow formLogin
 		.loginPage("/signin")//our own signin page
 		.defaultSuccessUrl("/admin/author/init-author")//if login successful
-		.loginProcessingUrl("/dologin")
+		.loginProcessingUrl("/dologin").failureUrl("/")
 		.and().csrf().disable();//disable all csrf(Cross-site Request Forgery)
 	}
 	
