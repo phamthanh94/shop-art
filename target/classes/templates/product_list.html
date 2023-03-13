@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+<head>
+    <meta charset="utf-8">
+    <title>Nguyen Dung Art Gallery</title>
+</head>
+<body>
+<section>
+    <h5>
+        <li><a style="color: brown" href="#">
+            <span th:text="${productType.name}"></span></a>
+        </li>
+    </h5>
+    <div class="well well-small">
+        <div class="row-fluid">
+            <ul class="thumbnails">
+                <li th:each="product : ${productList}">
+                    <div class="thumbnail">
+                        <a class="zoomTool" th:href="@{'/product-detail/'+${product.id}}" title="Xem chi tiết"></a>
+                        <a th:href="@{'/product-detail/'+${product.id}}">
+                            <img class="my_profile_picture" alt="Profile Image"
+                                 th:src="@{'/img/'+${product.imageUrl}}" th:title="${product.name}" />
+                        </a>
+                        <div class="caption cntr">
+                            <a th:href="@{'/product-detail/'+${product.id}}">  <p class="p-label" th:text="${product.name}"></p></a>
+                            <br class="clr">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+</body>
+</html>

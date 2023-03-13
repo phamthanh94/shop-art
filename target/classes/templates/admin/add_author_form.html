@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="admin/Base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8" />
+    <title>About Page</title>
+</head>
+<body>
+<section>
+
+    <div class="card mr-4 ml-4">
+        <div class="card-body">
+            <h1 class="text-center title-color">Tác Giả</h1>
+            <div class="container-fluid mt-1">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <form action="#" th:object="${author}"
+                              method="post" th:action="@{/admin/author/add-author}"
+                              class="mt-2" enctype="multipart/form-data"
+                        >
+                            <!-- First Name -->
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-plus"></i>
+                                    </div>
+                                </div>
+                                <input type="text" id="authorName" name="name"
+                                       placeholder="Nhập Tên..." class="form-control" required="required"/>
+                            </div>
+
+                            <!-- Avatar Image -->
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa-solid fa-circle-user"></i>
+                                    </div>
+                                    <div class="input-group-text">
+                                        <span>Avatar</span>
+                                    </div>
+                                    <div class="input-group-text">
+                                        <input type="file" name="profileImage" />
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Author Description -->
+                            <div class="form-group mt-3">
+							<textarea id="mytextarea" name="description" rows="10" class="form-control"
+                                      placeholder="Nhập thông tin giới thiệu về tác giả..."></textarea>
+                            </div>
+
+                            <div class="container text-center">
+                                <button class="btn btn-outline-primary">Lưu Thông tin</button>
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">STT</th>
+                    <th scope="col">Tên</th>
+                    <th scope="col">Giới thiệu</th>
+                    <th scope="col">Hành động</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="c,iter : ${authors}">
+                    <td th:text="${iter.index + 1}"></td>
+                    <td th:text="${c.name}">@mdo</td>
+                    <td th:text="${c.description}">@mdo</td>
+                    <td>
+                        <a href="#" th:href="@{'/admin/author/delete/'+${c.id}}" class="btn btn-danger btn-sm">Xóa</a>
+                        <a href="#" th:href="@{'/admin/author/update/'+${c.id}}" class="btn btn-danger btn-sm">Sửa</a>
+                        <a href="#"  th:href="@{'/' +${c.id} + '/author-detail'}" class="btn btn-danger btn-sm">Xem chi tiết</a>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>

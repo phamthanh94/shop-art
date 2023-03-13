@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="admin/Base::layout(~{::section})">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Page</title>
+</head>
+<body>
+<section>
+
+  <div class="card mr-4 ml-4">
+    <div class="card-body">
+      <h1 class="text-center title-color">Danh sách tác phẩm</h1>
+      <div class="container-fluid mt-1">
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">STT</th>
+            <th scope="col">Tên tác phẩm</th>
+            <th scope="col">Hành động</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="c,iter : ${productList}">
+            <td th:text="${iter.index + 1}"></td>
+            <td th:text="${c.name}">@mdo</td>
+            <td>
+              <a href="#"  th:href="@{'/admin/product/delete/'+${c.id}}" class="btn btn-danger btn-sm">Xóa</a>
+              <a href="#"  th:href="@{'/admin/product/update/'+${c.id}}" class="btn btn-danger btn-sm">Sửa</a>
+              <a href="#"  th:href="@{'/product-detail/'+${c.id}}" class="btn btn-danger btn-sm">Xem chi tiết</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+        <!-- Pagination part -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <li th:if="${currentPage != 0}" class="page-item"><a class="page-link" href="#" th:href="@{'/admin/product/show-products/'+${currentPage-1}}">Previous</a></li>
+
+            <li  th:if="${totalPages != 0}"  th th:classappend="${currentPage==i-1? 'active':''}" th:each="i : ${#numbers.sequence(1,totalPages)}" class="page-item">
+              <a class="page-link" href="#" th:href="@{'/admin/product/show-products/'+${i-1}}" ><span th:text="${i}"></span></a></li>
+
+            <li th:if="${currentPage + 1  != totalPages}" class="page-item">
+              <a class="page-link" href="#" th:href="@{'/admin/product/show-products/'+${currentPage+1}}">Next</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+
+</section>
+</body>
+</html>

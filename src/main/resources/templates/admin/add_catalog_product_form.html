@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="admin/Base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8" />
+    <title>About Page</title>
+</head>
+<body>
+<section>
+
+    <div class="card mr-4 ml-4">
+        <div class="card-body">
+            <h1 class="text-center title-color">Chủ đề tác phẩm</h1>
+            <div class="container-fluid mt-1">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <form action="#" th:object="${productType}"
+                              method="post" th:action="@{/admin/product/add-catalog-product}"
+                              class="mt-2">
+                            <!-- First Name -->
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <i class="fa fa-plus"></i>
+                                    </div>
+                                </div>
+                                <input type="text" id="name" name="name"
+                                       placeholder="Nhập chủ đề..." class="form-control" required="required"/>
+                            </div>
+                            </br>
+                            <div class="container text-center">
+                                <button class="btn btn-outline-primary">Lưu Thông tin</button>
+                            </div>
+                            <br>
+                        </form>
+
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">STT</th>
+                        <th scope="col">Chủ đề</th>
+                        <th scope="col">Hành động</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="c,iter : ${productTypes}">
+                        <td th:text="${iter.index + 1}"></td>
+                        <td th:text="${c.name}">@mdo</td>
+                        <td>
+                            <a href="#" th:href="@{'/admin/product/type/delete/'+${c.id}}" class="btn btn-danger btn-sm">Xóa</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="Base::layout(~{::section})">
+<head>
+    <meta charset="utf-8">
+    <title>Nguyen Dung Art Gallery</title>
+</head>
+<body>
+<section>
+    <h5>
+        <li><a style="color: brown" href="#">Họa sĩ</a>
+            <span style="font-size: 16px" th:text="${author.name}"></span>
+        </li>
+    </h5>
+    <div class="well well-small">
+        <div class="row-fluid">
+            <div class="span7">
+                <div id="myCarousel" class="carousel slide cntr">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img class="my_profile_picture"  alt="Profile Image"
+                                 th:src="@{'/img/'+${author.imageUrl}}" title="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="softn clr"/>
+    <h5>Thông tin chi tiết </h5>
+    <div class="well well-small">
+        <div class="row-fluid">
+                <div class="span7">
+                    <textarea class="textarea" th:text="${author.description}"></textarea>
+                 </div>
+        </div>
+    </div>
+
+<!--    Danh sách tác phẩm-->
+    <hr class="softn clr"/>
+    <h5>Tác Phẩm </h5>
+    <div class="well well-small">
+        <div class="row-fluid">
+            <ul class="thumbnails">
+                <li th:each="product : ${productList}">
+                    <div class="thumbnail">
+                        <a class="zoomTool" th:href="@{'/product-detail/'+${product.id}}" title="Xem chi tiết"></a>
+                        <a th:href="@{'/product-detail/'+${product.id}}">
+                            <img class="my_profile_picture" alt="Profile Image"
+                                 th:src="@{'/img/'+${product.imageUrl}}" th:title="${product.name}" />
+                        </a>
+                        <div class="caption cntr">
+                            <a th:href="@{'/product-detail/'+${product.id}}">  <p class="p-label" th:text="${product.name}"></p></a>
+                            <br class="clr">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+</body>
+</html>

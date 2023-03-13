@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="admin/Base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8" />
+    <title>About Page</title>
+</head>
+<body>
+<section>
+
+    <div class="card mr-4 ml-4">
+        <div class="card-body">
+            <h1 class="text-center title-color">Tác Phẩm</h1>
+
+            <div class="container-fluid mt-1">
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+
+                        <form action="#" th:object="${product}"
+                              method="post" th:action="@{/admin/product/add-product}"
+                              class="mt-2" enctype="multipart/form-data"
+                        >
+                            <!-- Loại Tác Phẩm -->
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="text-span">Chủ Đề</span>
+                                    </div>
+                                </div>
+                                <select class="form-control" id="productType" name="productType">
+                                    <option value="0">--Chọn chủ đề--</option>
+                                    <option th:each="option : ${productTypes}" th:value="${option.id}" th:text="${option.name}"></option>
+                                </select>
+                            </div>
+
+                            <!-- Họa Sĩ -->
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="text-span">Họa Sĩ</span>
+                                    </div>
+                                </div>
+                                <select class="form-control" id="authorId" name="authorId">
+                                    <option value="0">--Chọn tác giả--</option>
+                                    <option th:each="option : ${authors}" th:value="${option.id}" th:text="${option.name}"></option>
+                                </select>
+                            </div>
+
+                            <!-- Tên Tác Phẩm -->
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="text-span">Tên Tác Phẩm</span>
+                                    </div>
+                                </div>
+                                <input type="text" id="name" name="name"
+                                       placeholder="Nhập tên..." class="form-control" required="required"/>
+                            </div>
+
+                            <!-- Kích Thước -->
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="text-span">Kích Thước</span>
+                                    </div>
+                                </div>
+                                <input type="text" id="size" name="size"
+                                       placeholder="Nhập kích thước..." class="form-control" required="required"/>
+                            </div>
+
+                             <!--Năm sáng tác-->
+                            <div class="input-group mt-3">
+                                    <div class="input-group-prepend">
+                                        <div class="input-group-text">
+                                            <span class="text-span">Năm Sáng Tác</span>
+                                        </div>
+                                    </div>
+                                    <input type="text" id="year" name="year"
+                                           placeholder="Nhập năm sáng tác..." class="form-control" required="required"/>
+                            </div>
+
+                            <!--Chất liệu-->
+                            <div class="input-group mt-3">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text">
+                                        <span class="text-span">Chất Liệu</span>
+                                    </div>
+                                </div>
+                                <input type="text" id="material" name="material"
+                                       placeholder="Nhập chất liệu..." class="form-control" required="required"/>
+                            </div>
+
+                                <!-- Contact Description -->
+<!--                            <div class="form-group mt-3">-->
+<!--							       <textarea id="mytextarea" name="description" rows="10" class="form-control"-->
+<!--                                      placeholder="Nhập thêm thông tin về tác phẩm..."></textarea>-->
+<!--                            </div>-->
+                            <br>
+                                <!-- Contact Image -->
+                            <div class="custom-file">
+                                    <input type="file" name="profileImage" />
+                            </div>
+                            <div class="container text-center">
+                                <button class="btn btn-outline-primary">Lưu Thông tin</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>
