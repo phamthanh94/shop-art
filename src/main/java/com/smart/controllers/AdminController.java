@@ -114,7 +114,7 @@ public class AdminController {
                 Path path = CommonUtils.writeFile(multiPartFile);
                 author.setImageUrl(path.getFileName().toString());
             } else {
-                 author.setImageUrl("default.png");
+                 author.setImageUrl("sidebar2.png");
             }
             authorService.save(author);
             //message success
@@ -208,7 +208,7 @@ public class AdminController {
                 Path path = CommonUtils.writeFile(multiPartFile);
                 product.setImageUrl(path.getFileName().toString());
             } else {
-                product.setImageUrl("default.png");
+                product.setImageUrl("sidebar2.png");
             }
             productRepository.save(product);
             //message success
