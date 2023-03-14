@@ -113,6 +113,8 @@ public class AdminController {
             if (!multiPartFile.isEmpty()) {
                 Path path = CommonUtils.writeFile(multiPartFile);
                 author.setImageUrl(path.getFileName().toString());
+            } else {
+                 author.setImageUrl("default.png");
             }
             authorService.save(author);
             //message success
@@ -205,6 +207,8 @@ public class AdminController {
             if (!multiPartFile.isEmpty()) {
                 Path path = CommonUtils.writeFile(multiPartFile);
                 product.setImageUrl(path.getFileName().toString());
+            } else {
+                product.setImageUrl("default.png");
             }
             productRepository.save(product);
             //message success
