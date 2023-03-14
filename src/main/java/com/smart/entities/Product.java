@@ -33,7 +33,7 @@ public class Product {
     @Column(nullable = false, name = "year")
     private String year;
 
-    @Column(nullable = false, name = "image_url")
+    @Column(name = "image_url")
     private String imageUrl;
 
     @Column(nullable = false, name = "material")
