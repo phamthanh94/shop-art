@@ -6174,7 +6174,7 @@ a.badge:focus {
 
 .frame {
   width: 400px;
-  height: 280px;
+  height: 250px;
   border: 3px solid #0e0e0e;
   background: white;
   margin: auto;
@@ -6186,18 +6186,32 @@ a.badge:focus {
 
 .img-frame{
   width: 10%;
-  margin-right: 5px;
+  margin-right: 20px;
+  object-fit:cover;
+  /*border-radius: 50%;*/
+  border:2px solid black;
 }
 
 .img-frame-1{
   width: 400px;
   height: 257px;
   position: relative;
+  top: -68px;
+}
+
+.img-frame-interior {
+  width: 400px;
+  height: 178px;
+  position: relative;
+  top: -330px;
 }
 
 .img-frame-2{
-  width: 355px;
+  width: 357px;
   height: 224px;
+  position: relative;
+  top: -308px;
+  left: 23px;
 }
 
 .img-detail{
@@ -6212,7 +6226,8 @@ a.badge:focus {
   margin-right: 5px;
 }
 
-.button-color{
+.button-blue{
+  background-color: blue;
   height: 20px;
   width: 30px;
   margin-right: 5px;
@@ -6262,13 +6277,15 @@ a.badge:focus {
 
 .button-zoom{
   height: 30px;
-  width: 50px;
+  width: 70px;
   margin-right: 5px;
 }
 
-.p-label {
-  color: #ff1409;
-  font-size: 18px;
+.button-frame{
+  height: 24px;
+  width: 50px;
+  margin-right: 5px;
+  margin-top: 10px;
 }
 
 
