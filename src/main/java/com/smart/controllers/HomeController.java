@@ -32,6 +32,15 @@ public class HomeController {
 	@Autowired
 	private ProductRepository productRepository;
 
+	@GetMapping("/home")
+	public String home1(Model model) {
+		commonService.initMenuDropList(model);
+		Pageable pageable = PageRequest.of(0, 10);
+		Page<Product> productList = productRepository.findAll(pageable);
+		model.addAttribute("productList", productList);
+		return "home";
+	}
+
 
 	@GetMapping("/")
 	public String home(Model model) {
@@ -40,6 +49,12 @@ public class HomeController {
 		Page<Product> productList = productRepository.findAll(pageable);
 		model.addAttribute("productList", productList);
 		return "home";
+	}
+
+	@GetMapping("/exhibition")
+	public String exhibition(Model model) {
+		commonService.initMenuDropList(model);
+		return "exhibition";
 	}
 
 	@GetMapping("/contact")

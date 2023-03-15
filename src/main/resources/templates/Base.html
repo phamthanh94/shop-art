@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="span4 alignR">
-        <p ><br> <strong class="icon-phone-sign" style="color:#371baf;">  096.88.66.096 </strong><br><br></p>
+        <p ><br> <strong class="icon-phone-sign" style="color:#371baf;font-size: 18px">  096.88.66.096 </strong><br><br></p>
       </div>
     </div>
   </header>
@@ -62,12 +62,12 @@
               </div>
             </li>
           </ul>
-          <li class="nav-item"><a class="nav-link" aria-current="page" href="#"><span th:utext="#{label.exhibition}"></span></a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" th:href="@{/exhibition}"><span th:utext="#{label.exhibition}"></span></a></li>
           <li class="nav-item"><a class="nav-link" aria-current="page" th:href="@{/contact}"><span th:utext="#{label.contact}"></span></a></li>
         </ul>
-        <form action="#" class="navbar-search pull-left">
-          <input type="text" placeholder="Tìm kiếm..." class="search-query span2">
-        </form>
+<!--        <form action="#" class="navbar-search pull-left">-->
+<!--          <input type="text" placeholder="Tìm kiếm..." class="search-query span2">-->
+<!--        </form>-->
         <ul class="nav pull-right">
           <li class="nav-item">
                   <a class="nav-link" aria-current="page" th:href="@{/?lang=en}">
@@ -161,19 +161,19 @@
   <!--
   Footer
   -->
-  <footer class="footer">
+  <footer class="footer" style="margin-bottom: 30px">
     <div class="row-fluid">
       <div class="span4">
-        <h5 th:utext="#{label.contact.info}"></h5>
-        <a class="icon-map-marker" style="color:#371baf;" href="#"> 25 Xuân Hồng, P.12,Q.Tân Bình,Tp.HCM</a><br>
-        <a class="icon-phone-sign" style="color:#371baf;" href="#"> 096.88.66.096</a><br>
-        <a class="icon-envelope" style="color:#371baf;" href="#"> dungnt23149@gmail.com</a><br>
+        <h4 th:utext="#{label.contact.info}"></h4>
+        <a class="icon-map-marker" style="color:#371baf; font-size: 16px" href="#"> 25 Xuân Hồng, P.12,Q.Tân Bình,Tp.HCM</a><br>
+        <a class="icon-phone-sign" style="color:#371baf; font-size: 16px" href="#"> 096.88.66.096</a><br>
+        <a class="icon-envelope" style="color:#371baf; font-size: 16px" href="#"> dungnt23149@gmail.com</a><br>
       </div>
       <div class="span3">
-        <h5 th:utext="#{label.follow}"></h5>
-        <a class="icon-twitter-sign" style="color:#371baf;" href="http://www.twitter.com"></a>
-        <a class="icon-facebook" style="color:#371baf;" href="http://www.facebook.com"></a>
-        <a class="icon-youtube" style="color:#371baf;" href="http://www.youtube.com"></a>
+        <h4 th:utext="#{label.follow}"></h4>
+        <a class="icon-twitter-sign" style="color:#371baf; font-size: 30px" href="http://www.twitter.com"></a>
+        <a class="icon-facebook" style="color:#371baf; font-size: 30px" href="http://www.facebook.com"></a>
+        <a class="icon-youtube" style="color:#371baf; font-size: 30px" href="http://www.youtube.com"></a>
       </div>
       <div class="span3">
       </div>

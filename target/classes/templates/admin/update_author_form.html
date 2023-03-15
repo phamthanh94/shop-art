@@ -32,7 +32,7 @@
 
                             <!-- Contact Description -->
                             <div class="form-group mt-3">
-							<textarea id="mytextarea" name="description" rows="10" class="form-control"
+							<textarea id="mytextarea" name="description" rows="10" class="form-control" th:text="${author.description}"
                                       th:value="${author.description}" placeholder="Nhập thông tin giới thiệu về tác giả...">
                             </textarea>
                             </div>

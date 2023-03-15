@@ -1,15 +1,12 @@
 package com.smart.config;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
+import com.smart.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import com.smart.entities.User;
+import java.util.Collection;
+import java.util.Collections;
 
 @SuppressWarnings("serial")
 public class CustomUserDetails implements UserDetails{
