@@ -37,10 +37,10 @@
       </a>
       <div class="nav-collapse">
         <ul class="nav">
-          <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/}">Trang chủ</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" th:href="@{/}"><span th:utext="#{label.home}"></span></a></li>
           <ul class="nav">
             <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#">Họa sĩ <b class="caret"></b></a>
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span th:utext="#{label.artists}"></span> <b class="caret"></b></a>
               <div class="dropdown-menu">
                 <ul class="nav">
                   <li th:each="author : ${authors}">
@@ -52,7 +52,7 @@
           </ul>
           <ul class="nav">
             <li class="dropdown">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="#">Tác phẩm<b class="caret"></b></a>
+              <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span th:utext="#{label.painting}"></span><b class="caret"></b></a>
               <div class="dropdown-menu">
                 <ul class="nav">
                   <li th:each="productType : ${productTypes}">
@@ -62,25 +62,25 @@
               </div>
             </li>
           </ul>
-          <li class="nav-item"><a class="nav-link" aria-current="page" href="#">Triển lãm</a></li>
-          <li class="nav-item"><a class="nav-link" aria-current="page" th:href="@{/contact}">Liên hệ</a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" href="#"><span th:utext="#{label.exhibition}"></span></a></li>
+          <li class="nav-item"><a class="nav-link" aria-current="page" th:href="@{/contact}"><span th:utext="#{label.contact}"></span></a></li>
         </ul>
         <form action="#" class="navbar-search pull-left">
           <input type="text" placeholder="Tìm kiếm..." class="search-query span2">
         </form>
         <ul class="nav pull-right">
           <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#">
+                  <a class="nav-link" aria-current="page" th:href="@{/?lang=en}">
                     <img style="width: 20px" th:src="@{/img/eng.png}" src="" alt="eng">
                   </a>
           </li>
           <li class="nav-item">
-                 <a class="nav-link" aria-current="page" href="#">
+                 <a class="nav-link" aria-current="page" th:href="@{/?lang=vi}">
                    <img style="width: 20px" th:src="@{/img/vie.png}" src="" alt="vie">
                  </a>
           </li>
           <li class="dropdown">
-            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> Đăng nhập <b class="caret"></b></a>
+            <a data-toggle="dropdown" class="dropdown-toggle" href="#"><span class="icon-lock"></span> <span th:utext="#{label.login}"></span> <b class="caret"></b></a>
             <div class="dropdown-menu">
               <form id="login-form" class="form" action="#" th:action="@{/dologin}" method="post">
                 <div th:if="${param.error}" class="alert alert-danger">
@@ -91,16 +91,16 @@
                 </div>
 
                 <div class="form-group input-text">
-                  <label for="username" class="text-info">Tên truy cập:</label><br>
+                  <label for="username" class="text-info"><span th:utext="#{label.username}"></span>:</label><br>
                   <input type="text" name="username" id="username" class="form-control">
                 </div>
                 <div class="form-group input-text">
-                  <label for="password" class="text-info">Mật khẩu:</label><br>
+                  <label for="password" class="text-info"><span th:utext="#{label.password}"></span>:</label><br>
                   <input type="password" name="password" id="password" class="form-control">
                 </div>
                 <div class="form-group input-text" >
                   <label for="remember-me" class="text-info"><span>Remember me</span> <span><input id="remember-me" name="remember-me" type="checkbox"></span></label><br>
-                  <input type="submit" name="submit" class="btn btn-info btn-md" value="Đăng Nhập">
+                  <input type="submit" name="submit" class="btn btn-info btn-md" th:value="#{label.login}">
                 </div>
                 <!--                            <div id="register-link" class="text-right">-->
                 <!--                                <a href="/signup" class="text-info">Register here</a>-->
@@ -164,13 +164,13 @@
   <footer class="footer">
     <div class="row-fluid">
       <div class="span4">
-        <h5>THÔNG TIN LIÊN HỆ</h5>
+        <h5 th:utext="#{label.contact.info}"></h5>
         <a class="icon-map-marker" style="color:#371baf;" href="#"> 25 Xuân Hồng, P.12,Q.Tân Bình,Tp.HCM</a><br>
         <a class="icon-phone-sign" style="color:#371baf;" href="#"> 096.88.66.096</a><br>
         <a class="icon-envelope" style="color:#371baf;" href="#"> dungnt23149@gmail.com</a><br>
       </div>
       <div class="span3">
-        <h5>THEO DÕI CHÚNG TÔI</h5>
+        <h5 th:utext="#{label.follow}"></h5>
         <a class="icon-twitter-sign" style="color:#371baf;" href="http://www.twitter.com"></a>
         <a class="icon-facebook" style="color:#371baf;" href="http://www.facebook.com"></a>
         <a class="icon-youtube" style="color:#371baf;" href="http://www.youtube.com"></a>
