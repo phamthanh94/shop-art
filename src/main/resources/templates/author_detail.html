@@ -7,7 +7,7 @@
 <body>
 <section>
     <h5>
-        <li><a style="color: brown" href="#">Họa sĩ</a>
+        <li><a style="color: brown" href="#"><span th:utext="#{label.artists}"></span></a>
             <span style="font-size: 16px" th:text="${author.name}"></span>
         </li>
     </h5>
@@ -26,7 +26,7 @@
         </div>
     </div>
     <hr class="softn clr"/>
-    <h5>Giới thiệu </h5>
+    <h5 th:utext="#{label.introduction}"></h5>
     <div class="well well-small">
         <div class="row-fluid">
                 <div class="span7">
@@ -37,7 +37,6 @@
 
 <!--    Danh sách tác phẩm-->
     <hr class="softn clr"/>
-    <h5>Tác Phẩm </h5>
     <div class="well well-small">
         <div class="row-fluid">
             <ul class="thumbnails">
