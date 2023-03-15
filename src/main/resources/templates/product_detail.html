@@ -29,7 +29,7 @@
 
                     <div class="span7">
                         <div class="control-group">
-                            <label class="control-label"><span>Chọn khung:</span></label>
+                            <label class="control-label"><span th:utext="#{label.choose.frame}">:</span></label>
                             <div class="span6 button-group" id="button-group-frame">
                                 <a href="#"> <img onclick="chooseFrame('../assets/img/194.png')" class="img-frame" src="../assets/img/194.png" alt=""></a>
                                 <a href="#"> <img onclick="chooseFrame('../assets/img/195.png')" class="img-frame" src="../assets/img/195.png" alt=""></a>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="span7" style="padding-top: 20px">
                         <div class="control-group">
-                            <label class="control-label"><span>Chọn màu:</span></label>
+                            <label class="control-label"><span th:utext="#{label.choose.colour}">:</span></label>
                             <div class="span6 button-group" id="button-group">
                                 <button type="button" onclick="changeColor('#f6f6e6')" class="button-frame"  style="background: #f6f6e6;"></button>
                                 <button type="button" onclick="changeColor('#274e13')" class="button-frame"  style="background: #274e13;"></button>
@@ -53,7 +53,7 @@
                     </div>
                     <div class="span7" style="padding-top: 20px">
                         <div class="control-group">
-                            <label class="control-label"><span>Chọn nội thất:</span></label>
+                            <label class="control-label"><span th:utext="#{label.choose.Furniture}">:</span></label>
                             <div class="span6 button-group" id="button-group-interior">
                                 <a href="#"> <img onclick="chooseInterior('../assets/img/17.png')" class="img-frame" src="../assets/img/17.png" alt=""></a>
                                 <a href="#"> <img onclick="chooseInterior('../assets/img/18.png')" class="img-frame" src="../assets/img/18.png" alt=""></a>
@@ -67,12 +67,12 @@
                 <hr class="softn clr"/>
                 <div id="myTabContent" class="tab-content tabWrapper">
                     <div class="tab-pane fade active in" id="home">
-                        <h5>THÔNG TIN CHI TIẾT</h5>
+                        <h5 th:utext="#{label.info.detail}"></h5>
                         <hr class="softn clr"/>
-                        <h6>Họa sĩ: <span th:text="${product.authorName}"></span></h6>
-                        <h6>Chất liệu: <span th:text="${product.material}"></span></h6>
-                        <h6>Kích thước: <span th:text="${product.size}"></span></h6>
-                        <h6>Năm sáng tác: <span th:text="${product.year}"></span></h6>
+                        <h6><span th:utext="#{label.artists}">:</span><span th:text="${product.authorName}"></span></h6>
+                        <h6><span th:utext="#{label.medium}">:</span>: <span th:text="${product.material}"></span></h6>
+                        <h6><span th:utext="#{label.dimensions}">:</span>: <span th:text="${product.size}"></span></h6>
+                        <h6><span th:utext="#{label.created.date}">:</span>: <span th:text="${product.year}"></span></h6>
                     </div>
                 </div>
             </div>
