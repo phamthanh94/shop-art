@@ -8,9 +8,9 @@
 <section>
     <h5>
         <ul class="breadcrumb">
-        <li><a style="color: brown" th:href="@{'/product-list/'+ ${product.productType}}">
-            <span th:text="${product.productTypeName}"></span></a>
-            <span style="font-size: 16px" th:text="${product.name}"></span>
+            <li><a style="color: brown" th:href="@{'/product-list/'+ ${product.productType}}">
+                <span th:text="${product.productTypeName}"></span></a>
+                <span style="font-size: 16px" th:text="${product.name}"></span>
             </li>
         </ul>
     </h5>
@@ -19,46 +19,48 @@
             <div class="well well-small">
                 <div class="row-fluid">
                     <div class="frame" id="frame" >
-<!--                        <a href="#"> <img id="myFrame" class="img-frame-1" src="../assets/img/76.png" alt=""></a>-->
-                        <a href="#"> <img id="my_profile_picture" alt="" class="img-frame-2" th:src="@{'/img/'+${product.imageUrl}}" th:title="${product.name}" />
-                        </a>
-
+                        <a href="#"> <img id="myFrame" class="img-frame-1" src="../assets/img/76.png" alt=""></a>
+                        <a href="#"> <img id="my_profile_picture" alt="" class="img-frame-2" th:src="@{'/img/'+${product.imageUrl}}" th:title="${product.name}" /> </a>
+                        <a href="#"> <img id="my_interior" class="img-frame-interior" src="../assets/img/16.png" alt=""></a>
                     </div>
                     <br>
-                    <button class="button-zoom" onclick="zoomIn()">-</button>
-                    <button class="button-zoom" onclick="zoomOut()">+</button>
-                    <hr class="softn clr"/>
-                    <div class="span7">
-                        <form class="form-horizontal qtyFrm">
-<!--                            <div class="control-group">-->
-<!--                                <label class="control-label"><span>Chọn khung:</span></label>-->
-<!--                                <div class="span6">-->
-<!--                                    <a href="#" onclick="chooseFrame('../assets/img/76.png')">-->
-<!--                                        <img class="img-frame" src="../assets/img/76.png" alt=""/>-->
-<!--                                    </a>-->
-<!--                                    <a href="#" onclick="chooseFrame('../assets/img/194.png')">-->
-<!--                                        <img class="img-frame" src="../assets/img/194.png" alt=""/>-->
-<!--                                    </a>-->
-<!--                                    <a href="#" onclick="chooseFrame('../assets/img/195.png')">-->
-<!--                                        <img class="img-frame" src="../assets/img/195.png" alt=""/>-->
-<!--                                    </a>-->
-<!--                                </div>-->
-<!--                            </div>-->
 
-                            <div class="control-group">
-                                <label class="control-label"><span>Chọn màu:</span></label>
-                                <div class="span6 button-group" id="button-group">
-                                    <button type="button" onclick="changeColor('#f6f6e6')" class="button-color"  style="background: #f6f6e6;"></button>
-                                    <button type="button" onclick="changeColor('#274e13')" class="button-color"  style="background: #274e13;"></button>
-                                    <button type="button" onclick="changeColor('#d4c2b4')" class="button-color"  style="background: #d4c2b4;"></button>
-                                    <button type="button" onclick="changeColor('#a2bbc9')" class="button-color"  style="background: #a2bbc9;"></button>
-                                    <button type="button" onclick="changeColor('#980000')" class="button-color"  style="background: #980000;"></button>
-                                    <button type="button" onclick="changeColor('#ff0000')" class="button-color"  style="background: #ff0000;"></button>
-                                    <button type="button" onclick="changeColor('#618487')" class="button-color"  style="background: #618487;"></button>
-                                    <button type="button" onclick="changeColor('#8c3f5b')" class="button-color" style="background: #8c3f5b;"></button>
-                                </div>
+                    <hr class="softn clr"/>
+
+                    <div class="span7">
+                        <div class="control-group">
+                            <label class="control-label"><span>Chọn khung:</span></label>
+                            <div class="span6 button-group" id="button-group-frame">
+                                <a href="#"> <img onclick="chooseFrame('../assets/img/194.png')" class="img-frame" src="../assets/img/194.png" alt=""></a>
+                                <a href="#"> <img onclick="chooseFrame('../assets/img/195.png')" class="img-frame" src="../assets/img/195.png" alt=""></a>
                             </div>
-                        </form>
+                        </div>
+                    </div>
+                    <div class="span7" style="padding-top: 20px">
+                        <div class="control-group">
+                            <label class="control-label"><span>Chọn màu:</span></label>
+                            <div class="span6 button-group" id="button-group">
+                                <button type="button" onclick="changeColor('#f6f6e6')" class="button-frame"  style="background: #f6f6e6;"></button>
+                                <button type="button" onclick="changeColor('#274e13')" class="button-frame"  style="background: #274e13;"></button>
+                                <button type="button" onclick="changeColor('#d4c2b4')" class="button-frame"  style="background: #d4c2b4;"></button>
+                                <button type="button" onclick="changeColor('#a2bbc9')" class="button-frame"  style="background: #a2bbc9;"></button>
+                                <button type="button" onclick="changeColor('#980000')" class="button-frame"  style="background: #980000;"></button>
+                                <button type="button" onclick="changeColor('#ff0000')" class="button-frame"  style="background: #ff0000;"></button>
+                                <button type="button" onclick="changeColor('#618487')" class="button-frame"  style="background: #618487;"></button>
+                                <button type="button" onclick="changeColor('#8c3f5b')" class="button-frame"  style="background: #8c3f5b;"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="span7" style="padding-top: 20px">
+                        <div class="control-group">
+                            <label class="control-label"><span>Chọn nội thất:</span></label>
+                            <div class="span6 button-group" id="button-group-interior">
+                                <a href="#"> <img onclick="chooseInterior('../assets/img/17.png')" class="img-frame" src="../assets/img/17.png" alt=""></a>
+                                <a href="#"> <img onclick="chooseInterior('../assets/img/18.png')" class="img-frame" src="../assets/img/18.png" alt=""></a>
+                                <a href="#"> <img onclick="chooseInterior('../assets/img/19.png')" class="img-frame" src="../assets/img/19.png" alt=""></a>
+                                <a href="#"> <img onclick="chooseInterior('../assets/img/20.png')" class="img-frame" src="../assets/img/20.png" alt=""></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
