@@ -6289,4 +6289,9 @@ a.badge:focus {
   margin-top: 10px;
 }
 
+.p-label{
+  font-size: 18px;
+  color: brown;
+}
+
 

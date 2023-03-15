@@ -31,6 +31,7 @@
                         <div class="control-group">
                             <label class="control-label"><span th:utext="#{label.choose.frame}">:</span></label>
                             <div class="span6 button-group" id="button-group-frame">
+                                <a href="#"> <img onclick="chooseFrame('../assets/img/76.png')" class="img-frame" src="../assets/img/76.png" alt=""></a>
                                 <a href="#"> <img onclick="chooseFrame('../assets/img/194.png')" class="img-frame" src="../assets/img/194.png" alt=""></a>
                                 <a href="#"> <img onclick="chooseFrame('../assets/img/195.png')" class="img-frame" src="../assets/img/195.png" alt=""></a>
                             </div>
@@ -69,10 +70,10 @@
                     <div class="tab-pane fade active in" id="home">
                         <h5 th:utext="#{label.info.detail}"></h5>
                         <hr class="softn clr"/>
-                        <h6><span th:utext="#{label.artists}">:</span><span th:text="${product.authorName}"></span></h6>
-                        <h6><span th:utext="#{label.medium}">:</span>: <span th:text="${product.material}"></span></h6>
-                        <h6><span th:utext="#{label.dimensions}">:</span>: <span th:text="${product.size}"></span></h6>
-                        <h6><span th:utext="#{label.created.date}">:</span>: <span th:text="${product.year}"></span></h6>
+                        <h6><span th:utext="#{label.artists}"></span>: <span th:text="${product.authorName}"></span></h6>
+                        <h6><span th:utext="#{label.medium}"></span>: <span th:text="${product.material}"></span></h6>
+                        <h6><span th:utext="#{label.dimensions}"></span>: <span th:text="${product.size}"></span></h6>
+                        <h6><span th:utext="#{label.created.date}"></span>: <span th:text="${product.year}"></span></h6>
                     </div>
                 </div>
             </div>

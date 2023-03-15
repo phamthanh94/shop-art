@@ -48,7 +48,7 @@
             <ul class="thumbnails">
                 <li th:each="product : ${productList}">
                     <div class="thumbnail">
-                        <a class="zoomTool" th:href="@{'/product-detail/'+${product.id}}" th:title="#{label.view.detail}"></a>
+                        <a class="zoomTool" th:href="@{'/product-detail/'+${product.id}}"></a>
                         <a th:href="@{'/product-detail/'+${product.id}}">
                             <img class="my_profile_picture" alt="Profile Image"
                                  th:src="@{'../img/'+${product.imageUrl}}" th:title="${product.name}" />
