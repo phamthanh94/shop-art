@@ -185,23 +185,23 @@
 <script src="../assets/js/jquery.easing-1.3.min.js"></script>
 <script src="../assets/js/jquery.scrollTo-1.4.3.1-min.js"></script>
 <script src="../assets/js/shop.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly&signed_in=true" defer></script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v=weekly&signed_in=true" defer></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script> -->
 <script>
-  function initMap() {
-    const myLatLng = { lat: 10.79487, lng: 106.65209 };
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 16,
-      center: myLatLng,
-    });
+//   function initMap() {
+//     const myLatLng = { lat: 10.79487, lng: 106.65209 };
+//     const map = new google.maps.Map(document.getElementById("map"), {
+//       zoom: 16,
+//       center: myLatLng,
+//     });
 
-    new google.maps.Marker({
-      position: myLatLng,
-      map,
-      title: "25 Xuân Hồng, P.12, Q.Tân Bình, Tp.HCM",
-    });
-  }
-  window.initMap = initMap;
+//     new google.maps.Marker({
+//       position: myLatLng,
+//       map,
+//       title: "25 Xuân Hồng, P.12, Q.Tân Bình, Tp.HCM",
+//     });
+//   }
+//   window.initMap = initMap;
 
   function changeColor(color) {
     document.getElementById("frame").style.background = color;
@@ -214,24 +214,24 @@
     document.getElementById("my_interior").src = interior;
   }
 
-  function zoomOut() {
-    const pic = document.getElementById("my_profile_picture");
-    const width = pic.clientWidth;
-    const height = pic.clientHeight;
+//   function zoomOut() {
+//     const pic = document.getElementById("my_profile_picture");
+//     const width = pic.clientWidth;
+//     const height = pic.clientHeight;
 
-    if (height < 340) {
-      pic.style.height = height + 10 + "px";
-    }
-    pic.style.width = width + 10 + "px";
-  }
+//     if (height < 340) {
+//       pic.style.height = height + 10 + "px";
+//     }
+//     pic.style.width = width + 10 + "px";
+//   }
 
-  function zoomIn() {
-    const pic = document.getElementById("my_profile_picture");
-    const width = pic.clientWidth;
-    const height = pic.clientHeight;
-    pic.style.width = width - 10 + "px";
-    pic.style.height = height - 10 + "px";
-  }
+//   function zoomIn() {
+//     const pic = document.getElementById("my_profile_picture");
+//     const width = pic.clientWidth;
+//     const height = pic.clientHeight;
+//     pic.style.width = width - 10 + "px";
+//     pic.style.height = height - 10 + "px";
+//   }
    document.oncontextmenu = document.body.oncontextmenu = function() {return false;}
 </script>
 </body>
